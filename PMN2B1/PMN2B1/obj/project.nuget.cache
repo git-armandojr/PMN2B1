@@ -1,0 +1,19 @@
+{
+  "version": 2,
+  "dgSpecHash": "QNOyO7FitDLiu725PwFsuPdIiuvfvK7oiI0pzL+5exwF+6CFu74cE3/sPibYTO2/hr76kpYM9ctC/9ORGRs+2A==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\jrmai\\source\\repos\\PMN2B1\\PMN2B1\\PMN2B1\\PMN2B1.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\jrmai\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\jrmai\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
+    "C:\\Users\\jrmai\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
+    "C:\\Users\\jrmai\\.nuget\\packages\\sqlite-net-pcl\\1.6.292\\sqlite-net-pcl.1.6.292.nupkg.sha512",
+    "C:\\Users\\jrmai\\.nuget\\packages\\sqlitepclraw.bundle_green\\1.1.13\\sqlitepclraw.bundle_green.1.1.13.nupkg.sha512",
+    "C:\\Users\\jrmai\\.nuget\\packages\\sqlitepclraw.core\\1.1.13\\sqlitepclraw.core.1.1.13.nupkg.sha512",
+    "C:\\Users\\jrmai\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
+    "C:\\Users\\jrmai\\.nuget\\packages\\xamarin.essentials\\1.5.2\\xamarin.essentials.1.5.2.nupkg.sha512",
+    "C:\\Users\\jrmai\\.nuget\\packages\\xamarin.forms\\4.5.0.617\\xamarin.forms.4.5.0.617.nupkg.sha512",
+    "C:\\Users\\jrmai\\.nuget\\packages\\xamarin.forms.visual.material\\4.5.0.617\\xamarin.forms.visual.material.4.5.0.617.nupkg.sha512"
+  ],
+  "logs": []
+}

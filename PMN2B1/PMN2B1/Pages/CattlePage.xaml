@@ -1,0 +1,183 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="PMN2B1.Pages.CattlePage"
+             xmlns:local="clr-namespace:PMN2B1.Util"
+             Visual="Material"
+             Title="Gado"
+             Icon="cow.png">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="BlueButtonBackground">#03A9F4</Color>
+            <Style x:Key="FABPrimary" TargetType="Button">
+                <Setter Property="CornerRadius">
+                    <OnPlatform iOS="25" Android="100"/>
+                </Setter>
+                <Setter Property="BackgroundColor" Value="LightSlateGray"/>
+                <Setter Property="HeightRequest" Value="65"/>
+                <Setter Property="WidthRequest" Value="65"/>
+                <Setter Property="HorizontalOptions" Value="CenterAndExpand"/>
+                <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
+                <Setter Property="Padding" Value="0"/>
+                <Setter Property="Margin" Value="0,0,15,30"/>
+                <Setter Property="FontSize" Value="Title" />
+                <Setter Property="TextColor" Value="White" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <AbsoluteLayout 
+            VerticalOptions="FillAndExpand" 
+            HorizontalOptions="FillAndExpand">
+            <ListView x:Name="listViewCattle"
+                      ItemsSource="{Binding Cattles}"
+                      HasUnevenRows="True"
+                      ItemSelected="OnListViewItemSelected"
+                      ItemTapped="OnListViewItemTapped"
+                      SeparatorVisibility="Default"
+                      SeparatorColor="LightSlateGray">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid Padding="10">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="*" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <Label Grid.ColumnSpan="2" 
+                                       Grid.Column="0"
+                                       Text="{Binding Identifier}"
+                                       FontAttributes="Bold" 
+                                       FontSize="Medium"/>                                
+                                <Label Grid.Row="1"
+                                       Grid.Column="0"
+                                       Text="{Binding Specie}"
+                                       VerticalOptions="End" />
+                                <Label Grid.Row="2"
+                                       Grid.Column="0"
+                                       Text="{Binding Sex}"
+                                       VerticalOptions="End" />
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            <StackLayout 
+                x:Name="stackLayoutCattle"
+                Spacing="10"
+                Padding="10"
+                BackgroundColor="White">
+                <FlexLayout 
+                    Direction="Row" 
+                    Wrap="Wrap" 
+                    JustifyContent="SpaceBetween" 
+                    AlignItems="Start">
+                    
+                    <Label 
+                        FontSize="Subtitle"
+                        Text="Identificador" 
+                        FlexLayout.Basis="100%" />
+                    <Entry
+                        x:Name="identifier"
+                        Text="{Binding Identifier}"
+                        FlexLayout.Basis="100%"
+                        Margin="0,0,0,10" />
+
+                    <Label 
+                        FontSize="Subtitle"
+                        Text="Tipo" 
+                        FlexLayout.Basis="48%" />
+
+                    <Label 
+                        FontSize="Subtitle"
+                        Text="Data de Nascimento" 
+                        FlexLayout.Basis="48%" />
+
+                    <Picker
+                        x:Name="specie"
+                        SelectedIndexChanged="OnPickerSpecieSelectedIndexChanged"
+                        FlexLayout.Basis="48%">
+                        <Picker.Items>
+                            <x:String>Leiteiro</x:String>
+                            <x:String>Corte</x:String>
+                        </Picker.Items>
+                    </Picker>
+                    
+                    <DatePicker
+                        x:Name="birthdate"
+                        MinimumDate="01/01/1950"
+                        FlexLayout.Basis="48%"
+                        Margin="0,0,0,10" />                    
+
+                    <Label 
+                        FontSize="Subtitle"
+                        Text="Sexo" 
+                        FlexLayout.Basis="100%" />
+
+                    <Picker
+                        x:Name="sex"
+                        SelectedIndexChanged="OnPickerSexSelectedIndexChanged"
+                        FlexLayout.Basis="48%">
+                        <Picker.Items>
+                            <x:String>Fêmea</x:String>
+                            <x:String>Macho</x:String>
+                        </Picker.Items>
+                    </Picker>
+
+                    
+                    <!--<Label 
+                        FontSize="Subtitle"
+                        Text="Peso" 
+                        FlexLayout.Basis="100%"/>
+                    
+                    <Entry
+                        x:Name="weight"
+                        Keyboard="Numeric"
+                        Text="{Binding Weight}"
+                        FlexLayout.Basis="48%"
+                        Margin="0,0,0,10" />-->
+
+                    <BoxView 
+                        HorizontalOptions="CenterAndExpand"
+                        FlexLayout.Basis="100%"/>
+
+                    <Button 
+                        x:Name="ButtonSave"
+                        BackgroundColor="LightSlateGray"
+                        Clicked="OnButtonSaveClicked"
+                        Text="salvar" 
+                        HorizontalOptions="FillAndExpand" 
+                        FlexLayout.Basis="48%"/>
+                    <Button 
+                        x:Name="ButtonCancel"
+                        BackgroundColor="LightSlateGray"
+                        Clicked="OnButtonCancelClicked"
+                        Text="cancelar" 
+                        HorizontalOptions="FillAndExpand" 
+                        FlexLayout.Basis="48%"/>
+
+                </FlexLayout>
+            </StackLayout>
+
+            <Button x:Name="ButtonAdd" 
+                    Image=""
+                    Clicked="OnButtonAddClicked"
+                    IsVisible="True" Text="+"
+                    AbsoluteLayout.LayoutFlags="PositionProportional"
+                    AbsoluteLayout.LayoutBounds="1, 1, AutoSize, AutoSize"
+                    Style="{StaticResource FABPrimary}"  />
+
+            
+            
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>

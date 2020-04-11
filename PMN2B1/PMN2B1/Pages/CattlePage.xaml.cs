@@ -96,8 +96,8 @@ namespace PMN2B1.Pages
             stackLayoutCattle.IsVisible = true;
 
             identifier.Text = tappedItem.Identifier;
-            specie.SelectedIndex = 1;
-            sex.SelectedIndex = 1;
+            specie.SelectedIndex = (int)tappedItem.Specie;
+            sex.SelectedIndex = (int)tappedItem.Sex;
             birthdate.Date = tappedItem.BirthDate.Date;
         }
 

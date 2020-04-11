@@ -55,7 +55,13 @@ namespace PMN2B1.Repositories
                 }
                 else
                 {
-                    result = await conn.InsertAsync(new Cattle { Identifier = cattle.Identifier });
+                    result = await conn.InsertAsync(new Cattle 
+                    { 
+                        Identifier = cattle.Identifier,
+                        Specie = cattle.Specie,
+                        BirthDate = cattle.BirthDate,
+                        Sex = cattle.Sex,
+                    });
                 }
 
             StatusMessage = string.Format("{0} registro(s) adicionados [Nome: {1})", result, cattle.Identifier);
